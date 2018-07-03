@@ -1,0 +1,4 @@
+<li>Round {{round.number}}</li>
+<app-serie *ngFor="let serie of round.series" [serie]="serie" [roundNumber]="round.number" [prediction]="getPrediction(round.number, serie.seriesNumber)"
+    [displayModeOnly]="displayModeOnly">
+</app-serie>

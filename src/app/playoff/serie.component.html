@@ -1,0 +1,27 @@
+<div *ngIf="serie.matchupTeams">
+    {{serie.names.matchupName}}
+    <div>
+        {{serie.currentGame.seriesSummary.seriesStatus}}
+    </div>
+    <app-prediction [prediction]="prediction" [serie]="serie" [roundNumber]="roundNumber" [displayModeOnly]="displayModeOnly"
+        [idUser]="idUser"></app-prediction>
+    <div *ngIf="serieIsInProgess()">
+        <div *ngIf="serie.currentGame.boxscore">
+            <div>
+                {{serie.currentGame.boxscore.teams.away.team.name}} : {{serie.currentGame.boxscore.teams.away.teamStats.teamSkaterStats.goals}}
+            </div>
+            <div>
+                {{serie.currentGame.boxscore.teams.home.team.name}} : {{serie.currentGame.boxscore.teams.home.teamStats.teamSkaterStats.goals}}
+            </div>
+        </div>
+        <div *ngIf="!serie.currentGame.boxscore">
+            Next game on {{serie.currentGame.seriesSummary.gameTime | date:"EEEE 'at' h:mma"}}
+        </div>
+    </div>
+    <div *ngIf="!serieIsInProgess()">
+        Score: {{getScore()}}
+    </div>
+</div>
+<div *ngIf="!serie.matchupTeams">
+    To be determined
+</div>

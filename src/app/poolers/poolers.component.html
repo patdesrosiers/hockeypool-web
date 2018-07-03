@@ -1,0 +1,5 @@
+<div *ngIf="poolers">
+    <h2>{{title}}</h2>
+    
+    <app-pooler *ngFor="let pooler of poolers" [pooler]="pooler" [playoff]="playoff"></app-pooler>
+</div>

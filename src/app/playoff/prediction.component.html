@@ -1,0 +1,19 @@
+<div>{{formatedPrediction}}</div>
+<div *ngIf="canMakePrediction()">
+    Make your prediction here
+    <div>
+        <input name="team_round{{roundNumber}}_serie_{{serie.seriesNumber}}" type="radio" [(ngModel)]="prediction.teamId" value="{{serie.matchupTeams[0].team.id}}">{{serie.matchupTeams[0].team.name}}
+        <input name="team_round{{roundNumber}}_serie_{{serie.seriesNumber}}" type="radio" [(ngModel)]="prediction.teamId" value="{{serie.matchupTeams[1].team.id}}">{{serie.matchupTeams[1].team.name}}
+    </div>
+    <div>
+        <input name="numberOfGames_round{{roundNumber}}_serie_{{serie.seriesNumber}}" type="radio" [(ngModel)]="prediction.numberOfGames"
+            value="4">In 4 games
+        <input name="numberOfGames_round{{roundNumber}}_serie_{{serie.seriesNumber}}" type="radio" [(ngModel)]="prediction.numberOfGames"
+            value="5">In 5 games
+        <input name="numberOfGames_round{{roundNumber}}_serie_{{serie.seriesNumber}}" type="radio" [(ngModel)]="prediction.numberOfGames"
+            value="6">In 6 games
+        <input name="numberOfGames_round{{roundNumber}}_serie_{{serie.seriesNumber}}" type="radio" [(ngModel)]="prediction.numberOfGames"
+            value="7">In 7 games
+    </div>
+    <input type="button" (click)="makePrediction() " value="Make prediction" />
+</div>
