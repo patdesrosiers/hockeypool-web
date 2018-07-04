@@ -13,15 +13,3 @@ export class Prediction {
         Object.assign(this, values);        
     }
 }
-
-// public long Id { get; set; }
-//         public string Season { get; set; }
-//         public int RoundNumber { get; set; }
-//         public int SerieNumber { get; set; }
-//         public int TeamId { get; set; }
-//         public int IdUser { get; set; }
-
-//         public int NumberOfGames { get; set; }
-
-//         [NotMapped]
-//         public int Score { get; private set; }
